@@ -1,0 +1,236 @@
+/* Parallax Scrolling */
+
+body {
+    margin: 0;
+}
+
+.stage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #8888ff;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    width: 125px;
+    height: 75px;
+    background:
+        radial-gradient(circle 50px at 25px 30px, #fff 50%, transparent 0%),
+        radial-gradient(circle 50px at 50px 25px, #fff 50%, transparent 0%),
+        radial-gradient(circle 50px at 75px 25px, #fff 50%, transparent 0%),
+        radial-gradient(circle 50px at 100px 30px, #fff 50%, transparent 0%),
+        radial-gradient(circle 50px at 25px 45px, #fff 50%, transparent 0%),
+        radial-gradient(circle 50px at 50px 50px, #fff 50%, transparent 0%),
+        radial-gradient(circle 50px at 75px 50px, #fff 50%, transparent 0%),
+        radial-gradient(circle 50px at 100px 45px, #fff 50%, transparent 0%);
+}
+
+.cloud:nth-child(even) {
+    top: 25px;
+}
+
+.cloud1 {
+    left: 0%;
+}
+
+.cloud2 {
+    left: 25%;
+}
+
+.cloud3 {
+    left: 50%;
+}
+
+.cloud4 {
+    left: 75%;
+}
+
+.cloud5 {
+    left: 100%;
+}
+
+.cloud6 {
+    left: 125%;
+}
+
+.sky {
+    position: absolute;
+    width: 100%;
+    animation-name: clouds;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    top: 20px;
+}
+
+.sky-back {
+    opacity: .7;
+    animation-duration: 10s;
+}
+
+.sky-front .cloud {
+    transform: scale(1.25);
+}
+
+.sky-front {
+    top: 55px;
+    animation-duration: 5s;
+}
+
+.ground {
+    background: #668866;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+}
+
+.tree {
+    position: absolute;
+    background: linear-gradient(to right, brown, brown),
+        radial-gradient(circle 50px at 25px 50px, #a0f556 50%, transparent 0%),
+        radial-gradient(circle 50px at 50px 25px, #a0f556 50%, transparent 0%),
+        radial-gradient(circle 50px at 75px 25px, #a0f556 50%, transparent 0%),
+        radial-gradient(circle 50px at 100px 50px, #a0f556 50%, transparent 0%),
+        radial-gradient(circle 50px at 25px 75px, #a0f556 50%, transparent 0%),
+        radial-gradient(circle 50px at 65px 70px, #a0f556 50%, transparent 0%),
+        radial-gradient(circle 50px at 100px 75px, #a0f556 50%, transparent 0%);
+    background-size: 10% 35%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    width: 125px;
+    height: 110px;
+    bottom: 0;
+}
+
+.tree1 {
+    left: 10%;
+}
+
+.tree2 {
+    left: 75%
+}
+
+.tree3 {
+    left: 140%
+}
+
+.trees {
+    position: absolute;
+    width: 100%;
+    animation-name: trees;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.trees-back {
+    bottom: 20%;
+    animation-duration: 3s;
+}
+
+.trees-front .tree {
+    transform: scale(1.5);
+}
+
+.trees-front {
+    bottom: 5%;
+    animation-duration: 2s;
+}
+
+.road {
+    background-color: #000;
+    background-image: linear-gradient(to right, yellow 50%, transparent 50%);
+    background-size: 5% 6%;
+    background-repeat: repeat-x;
+    background-position: 50%;
+    position: absolute;
+    width: 111%;
+    height: 10%;
+    bottom: 7%;
+    left: 0;
+    animation-name: road;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: .6s;
+}
+
+.car {
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background: red;
+    border-radius: 50% 50% 0 0;
+    bottom: 12%;
+    left: 50%;
+}
+
+.wheel {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color: gray;
+    background-image:
+        linear-gradient(45deg, black 50%, transparent 50%),
+        linear-gradient(135deg, black 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, black 50%),
+        linear-gradient(45deg, transparent 50%, black 50%);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: top left, top right, bottom left, bottom right;
+    bottom: -5px;
+    border-radius: 50%;
+    animation-name: wheels;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+.wheel-left {
+    left: -5px;
+}
+
+.wheel-right {
+    right: -5px;
+}
+
+@keyframes clouds {
+    from {
+        margin-left: 0;
+    }
+
+    to {
+        margin-left: -50%;
+    }
+}
+
+@keyframes road {
+    from {
+        margin-left: 0;
+    }
+
+    to {
+        margin-left: -11%;
+    }
+}
+
+@keyframes trees {
+    from {
+        margin-left: 0;
+    }
+
+    to {
+        margin-left: -65%;
+    }
+}
+
+@keyframes wheels {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
